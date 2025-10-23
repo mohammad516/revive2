@@ -186,7 +186,7 @@ export default function WhyChooseReviveSection({ imageSrc = "/h23.jpg" }: WhyCho
                         <p className="text-sm sm:text-base leading-relaxed text-slate-700">
                           {feature.description}
                         </p>
-                        <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-4 place-items-stretch">
+                        <div className="grid grid-cols-2 gap-5 sm:gap-4 md:gap-4 place-items-stretch">
                           {feature.services?.map((service, serviceIdx) => (
                             <motion.div
                               key={service.category}
