@@ -110,13 +110,13 @@ const features = [
   },
 ];
 
-export default function WhyChooseReviveSection({ imageSrc = "/hero2.jpg" }: WhyChooseReviveSectionProps) {
+export default function WhyChooseReviveSection({ imageSrc = "/h23.jpg" }: WhyChooseReviveSectionProps) {
   const imageRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({ target: imageRef, offset: ["start end", "end start"] });
   const parallaxY = useTransform(scrollYProgress, [0, 1], ["-2%", "4%"]);
 
   return (
-    <section className="relative py-24 overflow-hidden">
+    <section className="relative py-12 sm:py-16 md:py-20 lg:py-24 overflow-hidden">
       {/* Animated gradient background overlay */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_#f0f7ff,_#ffffff_70%)]" />
       
@@ -126,19 +126,19 @@ export default function WhyChooseReviveSection({ imageSrc = "/hero2.jpg" }: WhyC
         <div className="absolute bottom-1/4 -left-32 w-48 h-48 bg-gradient-to-br from-purple-200/20 to-pink-200/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         {/* Enhanced Section Header */}
         <motion.div
-          className="text-center mb-20"
+          className="text-center mb-12 sm:mb-16 md:mb-20"
           variants={headerVariants}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <h2 className="text-5xl md:text-6xl font-semibold tracking-tight text-slate-900 leading-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-slate-900 leading-tight mb-3 sm:mb-4">
             Why Choose Revive?
           </h2>
-          <p className="text-lg text-slate-500 mt-2 font-medium tracking-wide mb-8 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-slate-500 mt-2 font-medium tracking-wide mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
             A center of trust, innovation, and holistic care
           </p>
           <motion.div
@@ -151,7 +151,7 @@ export default function WhyChooseReviveSection({ imageSrc = "/hero2.jpg" }: WhyC
         </motion.div>
 
         {/* Enhanced Two-Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16 lg:gap-20 items-start">
           {/* Left: Enhanced Feature Cards */}
           <motion.div
             className="space-y-4 sm:space-y-6 order-2 lg:order-1"
@@ -164,20 +164,20 @@ export default function WhyChooseReviveSection({ imageSrc = "/hero2.jpg" }: WhyC
               <motion.div
                 key={feature.title}
                 variants={cardVariants}
-                className="group bg-white/70 backdrop-blur-xl border border-white/30 shadow-[0_4px_10px_rgba(0,0,0,0.03),_0_10px_25px_rgba(0,0,0,0.05)] rounded-3xl p-4 sm:p-6 lg:p-8 hover:translate-y-[-3px] hover:shadow-lg transition-all duration-300 ease-out"
+                className="group bg-white/70 backdrop-blur-xl border border-white/30 shadow-[0_4px_10px_rgba(0,0,0,0.03),_0_10px_25px_rgba(0,0,0,0.05)] rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 hover:translate-y-[-3px] hover:shadow-lg transition-all duration-300 ease-out"
                 whileHover={{ y: -6 }}
               >
                 <div className="flex items-start gap-3 sm:gap-5">
                   {/* Enhanced Gradient Icon */}
                   <div className="relative">
-                    <div className={`flex h-14 w-14 sm:h-18 sm:w-18 shrink-0 items-center justify-center rounded-full bg-gradient-to-br ${feature.iconBg} text-white shadow-lg hover:ring-4 hover:ring-indigo-100 transition-all duration-300`}>
-                      <feature.Icon size={24} className="sm:w-8 sm:h-8" />
+                    <div className={`flex h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 shrink-0 items-center justify-center rounded-full bg-gradient-to-br ${feature.iconBg} text-white shadow-lg hover:ring-4 hover:ring-indigo-100 transition-all duration-300`}>
+                      <feature.Icon size={20} className="sm:w-6 sm:h-6 md:w-7 md:h-7" />
                     </div>
                     <div className={`absolute inset-0 rounded-full bg-gradient-to-br ${feature.iconBg} opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-xl`} />
                   </div>
                   
                   <div className="min-w-0 flex-1">
-                    <h3 className="text-lg sm:text-xl lg:text-2xl font-medium text-slate-900 mb-2 sm:mb-3 leading-tight">
+                    <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-slate-900 mb-2 sm:mb-3 leading-tight">
                       {feature.title}
                     </h3>
                     
@@ -186,11 +186,11 @@ export default function WhyChooseReviveSection({ imageSrc = "/hero2.jpg" }: WhyC
                         <p className="text-sm sm:text-base leading-relaxed text-slate-700">
                           {feature.description}
                         </p>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-3 md:gap-3">
+                        <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-4 place-items-stretch">
                           {feature.services?.map((service, serviceIdx) => (
                             <motion.div
                               key={service.category}
-                              className="rounded-xl sm:rounded-xl bg-gradient-to-br from-white to-slate-50 border border-slate-100 hover:border-indigo-200 hover:shadow-md transition-all duration-300 ease-out p-4 sm:p-4 hover:rotate-[0.5deg] hover:scale-105 active:scale-[0.98] sm:active:scale-105"
+                              className="rounded-lg sm:rounded-xl bg-gradient-to-br from-white to-slate-50 border border-slate-100 hover:border-indigo-200 hover:shadow-md transition-all duration-300 ease-out p-3 sm:p-4 hover:rotate-[0.5deg] hover:scale-105 active:scale-[0.98] sm:active:scale-105 min-w-[140px]"
                               initial={{ opacity: 0, y: 8 }}
                               whileInView={{ opacity: 1, y: 0 }}
                               viewport={{ once: true }}
@@ -198,12 +198,12 @@ export default function WhyChooseReviveSection({ imageSrc = "/hero2.jpg" }: WhyC
                               aria-label={`${service.category} services: ${service.services.join(', ')}`}
                             >
                               <div className="flex items-center gap-2 sm:gap-2 mb-2">
-                                <span className="text-lg sm:text-lg">{service.icon}</span>
-                                <h4 className="font-medium text-slate-800 text-sm sm:text-sm">
+                                <span className="text-base sm:text-lg">{service.icon}</span>
+                                <h4 className="font-medium text-slate-800 text-xs sm:text-sm">
                                   {service.category}
                                 </h4>
                               </div>
-                              <p className="text-slate-600 text-xs sm:text-xs leading-relaxed">
+                              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
                                 {service.services.join(", ")}
                               </p>
                             </motion.div>
@@ -240,11 +240,11 @@ export default function WhyChooseReviveSection({ imageSrc = "/hero2.jpg" }: WhyC
             }}
           >
             {/* Enhanced floating accent blob */}
-            <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-indigo-200/30 to-purple-200/20 rounded-full blur-2xl" />
+            <div className="absolute -top-4 -right-4 sm:-top-8 sm:-right-8 w-16 h-16 sm:w-32 sm:h-32 bg-gradient-to-br from-indigo-200/30 to-purple-200/20 rounded-full blur-2xl" />
             
             {/* Enhanced glassmorphism container with gradient ring */}
-            <div className="relative bg-gradient-to-tr from-indigo-200 via-white to-purple-100 p-[3px] rounded-[2rem] shadow-lg">
-              <div className="relative overflow-hidden rounded-[1.5rem] bg-white shadow-[0_20px_60px_rgba(0,0,0,0.1)]">
+            <div className="relative bg-gradient-to-tr from-indigo-200 via-white to-purple-100 p-[2px] sm:p-[3px] rounded-[1.5rem] sm:rounded-[2rem] shadow-lg">
+              <div className="relative overflow-hidden rounded-[1.25rem] sm:rounded-[1.5rem] bg-white shadow-[0_10px_30px_rgba(0,0,0,0.1)] sm:shadow-[0_20px_60px_rgba(0,0,0,0.1)]">
                 <div className="relative aspect-[4/5] w-full">
                   <Image
                     src={imageSrc}
@@ -264,14 +264,14 @@ export default function WhyChooseReviveSection({ imageSrc = "/hero2.jpg" }: WhyC
 
         {/* Optional CTA Layer */}
         <motion.div
-          className="text-center mt-16"
+          className="text-center mt-12 sm:mt-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.5 }}
         >
           <motion.button
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-medium rounded-full shadow-lg hover:translate-x-1 transition-all duration-300 hover:shadow-xl"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-medium rounded-full shadow-lg hover:translate-x-1 transition-all duration-300 hover:shadow-xl"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
