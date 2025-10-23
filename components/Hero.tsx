@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-const HERO_IMAGES = ["/hero1.jpg", "/hero2.jpg", "/hero3.jpg"];
+const HERO_IMAGES = ["/hero1.jpg", "/hero11.jpg", "/hero3.jpg"];
 
 export default function Hero() {
   const [current, setCurrent] = useState(0);

@@ -67,7 +67,7 @@ export default function AboutPreviewSection() {
             >
               <div className="relative h-full w-full rounded-xl overflow-hidden shadow-2xl group">
                 <Image
-                  src="/h5.jpg"
+                  src="/about1.jpg"
                   alt="Revive Wellness Center - Modern wellness facility"
                   fill
                   className="object-cover object-center transition-transform duration-700 group-hover:scale-110"
