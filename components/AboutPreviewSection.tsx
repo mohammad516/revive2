@@ -111,7 +111,7 @@ export default function AboutPreviewSection() {
                   Our goal is to support your journey toward optimal health, vitality, and confidence — with compassion and excellence.
                 </p>
                 <blockquote className="border-l-4 border-[#A7AEDC] pl-4 italic text-[#2E2E4D]/80 text-lg">
-                  “We believe in total wellness — physical, emotional, and cellular.”
+                  "We believe in total wellness — physical, emotional, and cellular."
                 </blockquote>
               </motion.div>
 

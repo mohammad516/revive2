@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import FeaturesSection from "@/components/FeaturesSection";
 import AboutPreviewSection from "@/components/AboutPreviewSection";
 import WhyChooseReviveSection from "@/components/WhyChooseReviveSection";
+import Footer from "@/components/Footer";
 
 export default function HomePage() {
   return (
@@ -12,6 +13,7 @@ export default function HomePage() {
       <FeaturesSection />
       <AboutPreviewSection />
       <WhyChooseReviveSection />
+      <Footer />
     </main>
   );
 }
