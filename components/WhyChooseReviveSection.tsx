@@ -160,7 +160,7 @@ export default function WhyChooseReviveSection({ imageSrc = "/h23.jpg" }: WhyCho
             whileInView="show"
             viewport={{ once: true, amount: 0.2 }}
           >
-            {features.map((feature, idx) => (
+            {features.map((feature) => (
               <motion.div
                 key={feature.title}
                 variants={cardVariants}

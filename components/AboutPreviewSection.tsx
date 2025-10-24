@@ -38,7 +38,6 @@ export default function AboutPreviewSection() {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.7, 1, 0.8]);
 
   return (
     <motion.section
@@ -111,7 +110,7 @@ export default function AboutPreviewSection() {
                   Our goal is to support your journey toward optimal health, vitality, and confidence — with compassion and excellence.
                 </p>
                 <blockquote className="border-l-4 border-[#A7AEDC] pl-4 italic text-[#2E2E4D]/80 text-lg">
-                  "We believe in total wellness — physical, emotional, and cellular."
+                  &ldquo;We believe in total wellness — physical, emotional, and cellular.&rdquo;
                 </blockquote>
               </motion.div>
 

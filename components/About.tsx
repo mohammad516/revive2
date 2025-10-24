@@ -1,29 +1,11 @@
 // About page inspired by Contact.tsx style and AboutPreviewSection color palette
 "use client";
-import { useRef, useState, useEffect } from "react";
+import { useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
-import { Heart, Sparkles, Leaf, Shield, Users, Star, ChevronDown, HeartPulse, Brain, ArrowRight } from "lucide-react";
+import { Heart, Sparkles, Leaf, ChevronDown, HeartPulse, Brain } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-// Animation variants
-const fadeInUp = {
-  initial: { opacity: 0, y: 40 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.8, ease: "easeInOut" }
-};
-
-const fadeInLeft = {
-  initial: { opacity: 0, x: -40 },
-  animate: { opacity: 1, x: 0 },
-  transition: { duration: 0.8, ease: "easeInOut" }
-};
-
-const fadeInRight = {
-  initial: { opacity: 0, x: 40 },
-  animate: { opacity: 1, x: 0 },
-  transition: { duration: 0.8, ease: "easeInOut" }
-};
 
 // Hero Section Component
 const HeroSection = () => {
@@ -89,58 +71,6 @@ const HeroSection = () => {
   );
 };
 
-// Content Section Component
-const ContentSection = ({ title, subtitle, children, delay = 0, id }: {
-  title: string;
-  subtitle?: string;
-  children: React.ReactNode;
-  delay?: number;
-  id?: string;
-}) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
-  return (
-    <motion.section
-      ref={ref}
-      id={id}
-      initial={{ opacity: 0, y: 40 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-      transition={{ duration: 0.8, delay }}
-      className="py-20 md:py-28"
-    >
-      <div className="max-w-7xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6, delay: delay + 0.2 }}
-          className="text-center mb-16"
-        >
-          <h2 
-            className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#6E76B4] to-[#A7AEDC] mb-4 font-serif tracking-wide"
-            style={{ fontFamily: 'var(--font-playfair), serif' }}
-          >
-            {title}
-          </h2>
-          {subtitle && (
-            <p className="text-lg md:text-xl text-[#2E2E4D]/70 italic font-serif mb-6">
-              {subtitle}
-            </p>
-          )}
-          <div className="w-24 h-[1px] bg-gradient-to-r from-[#6E76B4] to-[#A7AEDC] mx-auto"></div>
-        </motion.div>
-        
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8, delay: delay + 0.4 }}
-        >
-          {children}
-        </motion.div>
-      </div>
-    </motion.section>
-  );
-};
 
 // Vision & Mission Section
 const VisionMissionSection = () => {
@@ -419,7 +349,7 @@ const MeetOurTeamSection = () => {
                 {/* Quote - appears on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#6E76B4]/90 to-[#A7AEDC]/90 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center p-6">
                   <p className="text-white text-sm font-medium italic text-center leading-relaxed transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                    "{member.quote}"
+                    &ldquo;{member.quote}&rdquo;
                   </p>
                 </div>
               </div>

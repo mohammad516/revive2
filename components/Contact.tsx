@@ -1,8 +1,8 @@
 // Contact page styled to match AboutPreviewSection palette and includes real Beirut map
 "use client";
 import { useState, useRef } from "react";
-import { motion, useScroll, useTransform, useInView } from "framer-motion";
-import { MapPin, Phone, Mail, Clock, CheckCircle2, Send, ArrowDown, Sparkles, Heart } from "lucide-react";
+import { motion, useInView } from "framer-motion";
+import { MapPin, Phone, Mail, Clock, CheckCircle2, Send, ArrowDown, Heart } from "lucide-react";
 import { SiWhatsapp, SiInstagram, SiFacebook, SiTiktok } from "react-icons/si";
 
 // Modular Components
@@ -161,7 +161,7 @@ const HeroSection = () => {
 };
 
 const ContactInfoCard = ({ icon: Icon, title, content, subtitle, delay = 0 }: {
-  icon: any;
+  icon: React.ComponentType<{ className?: string }>;
   title: string;
   content: string | React.ReactNode;
   subtitle?: string;
@@ -210,7 +210,6 @@ const ContactForm = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -228,13 +227,11 @@ const ContactForm = () => {
     // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false);
-      setIsSubmitted(true);
       setShowSuccessModal(true);
       setFormData({ name: '', email: '', phone: '', message: '' });
       
       // Reset success state after 5 seconds
       setTimeout(() => {
-        setIsSubmitted(false);
         setShowSuccessModal(false);
       }, 5000);
     }, 2000);
@@ -266,7 +263,7 @@ const ContactForm = () => {
             Send us a Message
           </h2>
           <p className="text-[#2E2E4D]/90 text-lg font-sans">
-            We'll get back to you within 24 hours
+            We&apos;ll get back to you within 24 hours
           </p>
         </div>
 
@@ -419,7 +416,7 @@ const ContactForm = () => {
               Message Sent!
             </h3>
             <p className="text-[#2E2E4D]/90 mb-6 font-sans">
-              Thank you for reaching out! We'll get back to you within 24 hours.
+              Thank you for reaching out! We&apos;ll get back to you within 24 hours.
             </p>
             <motion.button
               onClick={() => setShowSuccessModal(false)}
