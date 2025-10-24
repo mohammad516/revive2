@@ -39,12 +39,12 @@ const HeroSection = () => {
   return (
     <section
       ref={ref}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden -mt-24 z-0"
     >
-      {/* Background Image with Motion */}
+      {/* Background Image with Motion - Full Coverage */}
       <motion.div 
         style={{ y }}
-        className="absolute inset-0 w-full h-full"
+        className="absolute inset-0 w-full h-full z-[-1]"
       >
         <Image
           src="/about1.jpg"
@@ -54,139 +54,36 @@ const HeroSection = () => {
           priority
           sizes="100vw"
         />
-        {/* Soft gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#E7E9F8]/60 via-white/40 to-[#A7AEDC]/50"></div>
+        {/* Soft gradient overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30"></div>
       </motion.div>
 
-      {/* Subtle background pattern */}
-      <div className="absolute inset-0 opacity-[0.03]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(110,118,180,0.15)_1px,transparent_0)] bg-[length:20px_20px]" />
-      </div>
-      
-      {/* Floating Elements */}
-      <motion.div
-        className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-r from-[#6E76B4]/20 to-[#A7AEDC]/20 rounded-full blur-xl"
-        animate={{
-          y: [0, -20, 0],
-          x: [0, 10, 0],
-          scale: [1, 1.1, 1],
-        }}
-        transition={{
-          duration: 6,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      />
-      <motion.div
-        className="absolute top-40 right-20 w-32 h-32 bg-gradient-to-r from-[#A7AEDC]/15 to-[#6E76B4]/15 rounded-full blur-2xl"
-        animate={{
-          y: [0, 30, 0],
-          x: [0, -15, 0],
-          scale: [1, 0.9, 1],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 1
-        }}
-      />
-      <motion.div
-        className="absolute bottom-40 left-1/4 w-24 h-24 bg-gradient-to-r from-[#6E76B4]/20 to-[#A7AEDC]/20 rounded-full blur-xl"
-        animate={{
-          y: [0, -25, 0],
-          x: [0, 20, 0],
-          scale: [1, 1.2, 1],
-        }}
-        transition={{
-          duration: 7,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 2
-        }}
-      />
-
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <motion.div
+      {/* Main Content */}
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col justify-center items-center min-h-screen">
+        <motion.h1 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="bg-white/20 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-white/30"
+          transition={{ duration: 1, delay: 0.3 }}
+          style={{ y: headingY }}
+          className="text-6xl md:text-7xl lg:text-8xl font-bold text-[#F9FAFB] leading-tight tracking-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]"
         >
-          <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full text-sm font-bold uppercase tracking-wider text-[#6E76B4] mb-8 shadow-lg"
-          >
-            <Heart className="w-4 h-4 text-[#6E76B4]" />
-            <span>Wellness Excellence</span>
-          </motion.div>
-
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            style={{ y: headingY }}
-            className="text-6xl md:text-7xl lg:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#6E76B4] to-[#A7AEDC] mb-6 leading-tight font-serif tracking-wide"
-            style={{ fontFamily: 'var(--font-playfair), serif' }}
-          >
-            About Revive Wellness Center
-          </motion.h1>
-          
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xl md:text-2xl text-[#2E2E4D]/90 max-w-3xl mx-auto leading-relaxed mb-8 font-sans"
-            style={{ fontFamily: 'var(--font-inter), sans-serif' }}
-          >
-            Where Innovation Meets Holistic Healing
-          </motion.p>
-          
-          <motion.div
-            initial={{ opacity: 0, scaleX: 0 }}
-            animate={{ opacity: 1, scaleX: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="w-24 h-[1px] bg-gradient-to-r from-[#6E76B4] to-[#A7AEDC] mx-auto mb-8"
-          />
-          
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-lg md:text-xl text-[#2E2E4D]/80 max-w-4xl mx-auto leading-relaxed mb-8 font-sans"
-            style={{ fontFamily: 'var(--font-inter), sans-serif' }}
-          >
-            At Revive, we merge advanced medical innovation with natural healing practices to create a transformative wellness experience that nurtures your body, mind, and spirit.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
-          >
-            <Link href="#vision">
-              <motion.button
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-[#6E76B4] to-[#A7AEDC] text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-3 mx-auto hover:scale-110 hover:from-[#5A6299] hover:to-[#8B94C7] hover:ring-2 hover:ring-[#6E76B4]/30 hover:ring-offset-2"
-              >
-                <span>Discover Our Vision</span>
-                <ArrowRight className="w-5 h-5" />
-              </motion.button>
-            </Link>
-          </motion.div>
-        </motion.div>
+          About Us
+        </motion.h1>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll Indicator - Enhanced Animation */}
       <motion.div
         animate={{ y: [0, 10, 0] }}
-        transition={{ repeat: Infinity, duration: 1.5 }}
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-[#6E76B4]"
+        transition={{ repeat: Infinity, duration: 2 }}
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/80"
       >
-        <ChevronDown size={24} />
+        <motion.div
+          animate={{ scale: [1, 1.2, 1] }}
+          transition={{ repeat: Infinity, duration: 2 }}
+          className="w-10 h-10 border-2 border-white/60 rounded-full flex items-center justify-center backdrop-blur-sm bg-white/5"
+        >
+          <ChevronDown size={18} />
+        </motion.div>
       </motion.div>
     </section>
   );
@@ -428,23 +325,32 @@ const WellnessPhilosophySection = () => {
   );
 };
 
-// Visual Section
-const VisualSection = () => {
-  const images = [
+// Meet Our Team Section
+const MeetOurTeamSection = () => {
+  const teamMembers = [
     {
-      src: "/hero2.jpg",
-      alt: "Doctors collaborating",
-      title: "Expert Collaboration"
+      image: "/team1.webp",
+      name: "Dr. Sarah Al-Mansouri",
+      title: "Integrative Medicine Specialist",
+      quote: "True healing begins when we address the whole person, not just the symptoms."
     },
     {
-      src: "/hero3.jpg",
-      alt: "Serene treatment scene",
-      title: "Peaceful Healing"
+      image: "/team2.jpg", 
+      name: "Dr. David Chen",
+      title: "Aesthetic Consultant",
+      quote: "Beauty is confidence, and confidence comes from feeling your absolute best."
     },
     {
-      src: "/about1.jpg",
-      alt: "Modern lab aesthetics",
-      title: "Innovation in Action"
+      image: "/team3.jpg",
+      name: "Dr. Lina Haddad", 
+      title: "Wellness Coach",
+      quote: "Every individual's wellness journey is unique, and that's what makes it beautiful."
+    },
+    {
+      image: "/team4.jpg",
+      name: "Dr. Omar Youssef",
+      title: "Anti-Aging Specialist", 
+      quote: "Age is just a number when you have the right tools for healthy aging."
     }
   ];
 
@@ -470,37 +376,51 @@ const VisualSection = () => {
             className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#6E76B4] to-[#A7AEDC] mb-4 font-serif tracking-wide"
             style={{ fontFamily: 'var(--font-playfair), serif' }}
           >
-            Our Wellness Journey
+            Meet Our Team of Experts
           </h2>
           <p className="text-lg md:text-xl text-[#2E2E4D]/70 italic font-serif mb-6">
-            Where science meets serenity in every moment
+            A passionate team of medical and wellness professionals dedicated to your transformation
           </p>
           <div className="w-24 h-[1px] bg-gradient-to-r from-[#6E76B4] to-[#A7AEDC] mx-auto"></div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {images.map((image, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {teamMembers.map((member, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.8, delay: 0.4 + index * 0.1 }}
-              whileHover={{ y: -10, scale: 1.05 }}
-              className="group relative overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500"
+              whileHover={{ y: -10, scale: 1.02 }}
+              className="group relative bg-white/70 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-white/50 hover:shadow-2xl transition-all duration-500"
             >
-              <div className="relative h-80 w-full">
+              {/* Professional Portrait */}
+              <div className="relative w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden shadow-lg">
                 <Image
-                  src={image.src}
-                  alt={image.alt}
+                  src={member.image}
+                  alt={member.name}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="absolute bottom-4 left-4 right-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="text-white font-semibold text-lg font-serif">
-                    {image.title}
-                  </h3>
+                {/* Gradient overlay on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#6E76B4]/20 to-[#A7AEDC]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"></div>
+              </div>
+
+              {/* Team Member Info */}
+              <div className="text-center">
+                <h3 className="text-xl font-bold text-[#2E2E4D] mb-2 font-serif tracking-wide">
+                  {member.name}
+                </h3>
+                <p className="text-[#6E76B4] font-medium text-sm mb-4">
+                  {member.title}
+                </p>
+                
+                {/* Quote - appears on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#6E76B4]/90 to-[#A7AEDC]/90 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center p-6">
+                  <p className="text-white text-sm font-medium italic text-center leading-relaxed transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                    "{member.quote}"
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -590,17 +510,29 @@ const About = () => {
           {/* Vision & Mission Section */}
           <VisionMissionSection />
 
-          {/* Soft Divider */}
-          <div className="border-t border-[#6E76B4]/20 my-16"></div>
+          {/* Wellness Philosophy Section with Background */}
+          <div className="relative overflow-hidden">
+            {/* Background Image */}
+            <div className="absolute inset-0 w-full h-full">
+              <Image
+                src="/about2.jpg"
+                alt="Wellness Philosophy Background"
+                fill
+                className="object-cover"
+                sizes="100vw"
+              />
+              {/* Gradient overlay for better text readability */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#E7E9F8]/80 via-white/70 to-[#A7AEDC]/60"></div>
+            </div>
 
-          {/* Wellness Philosophy Section */}
-          <WellnessPhilosophySection />
+            {/* Wellness Philosophy Section */}
+            <div className="relative z-10">
+              <WellnessPhilosophySection />
+            </div>
+          </div>
 
-          {/* Soft Divider */}
-          <div className="border-t border-[#6E76B4]/20 my-16"></div>
-
-          {/* Visual Section */}
-          <VisualSection />
+          {/* Meet Our Team Section */}
+          <MeetOurTeamSection />
         </div>
       </div>
 
