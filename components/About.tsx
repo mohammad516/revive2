@@ -29,12 +29,13 @@ const HeroSection = () => {
         className="absolute inset-0 w-full h-full z-[-1]"
       >
         <Image
-          src="/about1.jpg"
+          src="https://res.cloudinary.com/dp0wyn4dg/image/upload/f_auto,q_auto/v1761327757/about1_kthaqe.jpg"
           alt="Revive Wellness Center - Serene wellness environment"
           fill
           className="object-cover"
           priority
           sizes="100vw"
+          unoptimized
         />
         {/* Soft gradient overlay for better text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30"></div>
@@ -259,25 +260,25 @@ const WellnessPhilosophySection = () => {
 const MeetOurTeamSection = () => {
   const teamMembers = [
     {
-      image: "/team1.webp",
+      image: "https://res.cloudinary.com/dp0wyn4dg/image/upload/f_auto,q_auto/v1761330497/team1_erocpm.webp",
       name: "Dr. Sarah Al-Mansouri",
       title: "Integrative Medicine Specialist",
       quote: "True healing begins when we address the whole person, not just the symptoms."
     },
     {
-      image: "/team2.jpg", 
+      image: "https://res.cloudinary.com/dp0wyn4dg/image/upload/f_auto,q_auto/v1761330497/team2_lmf0n1.jpg", 
       name: "Dr. David Chen",
       title: "Aesthetic Consultant",
       quote: "Beauty is confidence, and confidence comes from feeling your absolute best."
     },
     {
-      image: "/team3.jpg",
+      image: "https://res.cloudinary.com/dp0wyn4dg/image/upload/f_auto,q_auto/v1761330498/team3_zqjrxp.jpg",
       name: "Dr. Lina Haddad", 
       title: "Wellness Coach",
       quote: "Every individual's wellness journey is unique, and that's what makes it beautiful."
     },
     {
-      image: "/team4.jpg",
+      image: "https://res.cloudinary.com/dp0wyn4dg/image/upload/f_auto,q_auto/v1761330498/team4_uqqsqz.jpg",
       name: "Dr. Omar Youssef",
       title: "Anti-Aging Specialist", 
       quote: "Age is just a number when you have the right tools for healthy aging."
@@ -445,11 +446,12 @@ const About = () => {
             {/* Background Image */}
             <div className="absolute inset-0 w-full h-full">
               <Image
-                src="/about2.jpg"
+                src="https://res.cloudinary.com/dp0wyn4dg/image/upload/f_auto,q_auto/v1761329261/about2_pxmw3u.jpg"
                 alt="Wellness Philosophy Background"
                 fill
                 className="object-cover"
                 sizes="100vw"
+                unoptimized
               />
               {/* Gradient overlay for better text readability */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#E7E9F8]/80 via-white/70 to-[#A7AEDC]/60"></div>

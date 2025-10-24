@@ -4,7 +4,11 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-const HERO_IMAGES = ["/hero1.jpg", "/hero11.jpg", "/hero3.jpg"];
+const HERO_IMAGES = [
+  "https://res.cloudinary.com/dp0wyn4dg/image/upload/f_auto,q_auto/v1761327757/about1_kthaqe.jpg",
+  "https://res.cloudinary.com/dp0wyn4dg/image/upload/f_auto,q_auto/v1761330112/hero11_gxmuc0.jpg",
+  "https://res.cloudinary.com/dp0wyn4dg/image/upload/f_auto,q_auto/v1761330133/hero3_gflwtr.jpg",
+];
 
 export default function Hero() {
   const [current, setCurrent] = useState(0);

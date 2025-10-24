@@ -110,7 +110,7 @@ const features = [
   },
 ];
 
-export default function WhyChooseReviveSection({ imageSrc = "/h23.jpg" }: WhyChooseReviveSectionProps) {
+export default function WhyChooseReviveSection({ imageSrc = "https://res.cloudinary.com/dp0wyn4dg/image/upload/f_auto,q_auto/v1761330906/h23_iapgpz.jpg" }: WhyChooseReviveSectionProps) {
   const imageRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({ target: imageRef, offset: ["start end", "end start"] });
   const parallaxY = useTransform(scrollYProgress, [0, 1], ["-2%", "4%"]);

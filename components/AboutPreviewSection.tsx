@@ -66,12 +66,13 @@ export default function AboutPreviewSection() {
             >
               <div className="relative h-full w-full rounded-xl overflow-hidden shadow-2xl group">
                 <Image
-                  src="/about1.jpg"
+                  src="https://res.cloudinary.com/dp0wyn4dg/image/upload/f_auto,q_auto/v1761327757/about1_kthaqe.jpg"
                   alt="Revive Wellness Center - Modern wellness facility"
                   fill
                   className="object-cover object-center transition-transform duration-700 group-hover:scale-110"
                   priority
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
+                  unoptimized
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-black/10" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
